@@ -1,9 +1,8 @@
 <?php
 
-namespace Dhii\Espresso\Expression;
+namespace Dhii\Espresso;
 
-use Dhii\Espresso\AbstractExpression;
-use Dhii\Evaluable\EvaluableInterface;
+use \Dhii\Evaluable\EvaluableInterface;
 
 /**
  * An abstract and generic expression implementation that is a useful shortcut for exposing

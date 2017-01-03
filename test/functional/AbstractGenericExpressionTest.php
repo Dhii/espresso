@@ -1,9 +1,10 @@
 <?php
 
-namespace Dhii\Espresso\Test\Expression;
+namespace Dhii\Espresso\Test;
 
-use Dhii\Espress\Expression\AbstractGenericExpression;
-use Xpmock\TestCase;
+use \Dhii\Espresso\AbstractGenericExpression;
+use \Dhii\Evaluable\EvaluableInterface;
+use \Xpmock\TestCase;
 
 /**
  * Tests {@see \Dhii\Espress\Expression\AbstractGenericExpression}.
