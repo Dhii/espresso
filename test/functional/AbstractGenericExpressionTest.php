@@ -33,7 +33,7 @@ class AbstractGenericExpressionTest extends TestCase
      */
     public function createInstance(array $terms = array())
     {
-        $mock = $this->mock('Dhii\\Espresso\\Expression\\AbstractGenericExpression')
+        $mock = $this->mock('Dhii\\Espresso\\AbstractGenericExpression')
             ->evaluate(0) // return value does not matter
             ->new();
 
