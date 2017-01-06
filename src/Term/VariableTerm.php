@@ -2,10 +2,10 @@
 
 namespace Dhii\Espresso\Term;
 
-use Dhii\Data\ValueAwareInterface;
-use Dhii\Espresso\AbstractCompositeContext;
-use Dhii\Espresso\EvaluationException;
-use Dhii\Evaluable\EvaluableInterface;
+use \Dhii\Data\ValueAwareInterface;
+use \Dhii\Espresso\CompositeContextInterface;
+use \Dhii\Espresso\EvaluationException;
+use \Dhii\Evaluable\EvaluableInterface;
 
 /**
  * A term whose value can vary depending on the context.
@@ -74,7 +74,7 @@ class VariableTerm implements EvaluableInterface
     {
         $identifier = $this->getIdentifier();
 
-        if ($ctx instanceof AbstractCompositeContext && $ctx->hasValue($identifier)) {
+        if ($ctx instanceof CompositeContextInterface && $ctx->hasValue($identifier)) {
             return $ctx->getValueOf($identifier);
         }
 
