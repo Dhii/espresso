@@ -28,18 +28,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/Dhii/espresso-abstract"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/espresso-interface"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/evaluable-interface"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/data-key-value-aware-interface"
         }
     ]
 }
