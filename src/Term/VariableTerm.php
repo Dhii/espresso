@@ -3,8 +3,8 @@
 namespace Dhii\Espresso\Term;
 
 use \Dhii\Data\ValueAwareInterface;
-use \Dhii\Espresso\CompositeContextInterface;
-use \Dhii\Espresso\EvaluationException;
+use \Dhii\Expression\CompositeContextInterface;
+use \Dhii\Expression\EvaluationException;
 use \Dhii\Evaluable\EvaluableInterface;
 
 /**

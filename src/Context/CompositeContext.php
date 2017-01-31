@@ -2,7 +2,7 @@
 
 namespace Dhii\Espresso\Context;
 
-use Dhii\Espresso\AbstractCompositeContext;
+use Dhii\Expression\AbstractCompositeContext;
 
 /**
  * A context that has multiple values.

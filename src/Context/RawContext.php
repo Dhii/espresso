@@ -2,7 +2,7 @@
 
 namespace Dhii\Espresso\Context;
 
-use Dhii\Espresso\AbstractContext;
+use Dhii\Expression\AbstractContext;
 
 /**
  * Description of RawContext.

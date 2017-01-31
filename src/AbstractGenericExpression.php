@@ -2,7 +2,8 @@
 
 namespace Dhii\Espresso;
 
-use \Dhii\Evaluable\EvaluableInterface;
+use Dhii\Expression\AbstractExpression;
+use Dhii\Evaluable\EvaluableInterface;
 
 /**
  * An abstract and generic expression implementation that is a useful shortcut for exposing
