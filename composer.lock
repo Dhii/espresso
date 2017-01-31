@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b3947c314327e9d99c1ad9f8bb7bb52",
-    "content-hash": "f1bdb9ab71495f3e13a668be53cd7b4c",
+    "hash": "426d778fedcd1e5e72add38c3e801760",
+    "content-hash": "dd988e1d95ddb18408293c5a6ccc6682",
     "packages": [
         {
             "name": "dhii/data-key-value-aware-interface",
@@ -50,94 +50,6 @@
             "time": "2017-01-21 17:35:30"
         },
         {
-            "name": "dhii/espresso-abstract",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/espresso-abstract.git",
-                "reference": "fe319f3c52213d359ec60ebb2a65e25c9a964ac5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/espresso-abstract/zipball/fe319f3c52213d359ec60ebb2a65e25c9a964ac5",
-                "reference": "fe319f3c52213d359ec60ebb2a65e25c9a964ac5",
-                "shasum": ""
-            },
-            "require": {
-                "dhii/espresso-interface": "dev-master",
-                "php": "^5.3.9 | ^7.0"
-            },
-            "require-dev": {
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\Espresso\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "description": "Abstract classes for Espresso.",
-            "support": {
-                "source": "https://github.com/Dhii/espresso-abstract/tree/master",
-                "issues": "https://github.com/Dhii/espresso-abstract/issues"
-            },
-            "time": "2017-01-15 10:53:20"
-        },
-        {
-            "name": "dhii/espresso-interface",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/espresso-interface.git",
-                "reference": "9872bba63b452f5e4150058c03cb10057ffe143f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/espresso-interface/zipball/9872bba63b452f5e4150058c03cb10057ffe143f",
-                "reference": "9872bba63b452f5e4150058c03cb10057ffe143f",
-                "shasum": ""
-            },
-            "require": {
-                "dhii/evaluable-interface": "^0.1",
-                "php": "^5.3.9 | ^7.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\Espresso\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "description": "The interfaces for Espresso: a PHP expression builder and evaluation library.",
-            "time": "2017-01-23 00:57:35"
-        },
-        {
             "name": "dhii/evaluable-interface",
             "version": "v0.1",
             "source": {
@@ -179,6 +91,95 @@
             ],
             "description": "Increasing interoperability for objects that can be evaluated",
             "time": "2017-01-21 18:30:17"
+        },
+        {
+            "name": "dhii/expression-abstract",
+            "version": "dev-release/0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/espresso-abstract.git",
+                "reference": "1d37e48eaa5c8978b445c59b82578ad18e7de662"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/espresso-abstract/zipball/1d37e48eaa5c8978b445c59b82578ad18e7de662",
+                "reference": "1d37e48eaa5c8978b445c59b82578ad18e7de662",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/expression-interface": "^0.1",
+                "php": "^5.3.9 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Expression\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Abstract base classes for representing expressions.",
+            "support": {
+                "source": "https://github.com/Dhii/espresso-abstract/tree/release/0.1",
+                "issues": "https://github.com/Dhii/espresso-abstract/issues"
+            },
+            "time": "2017-01-31 12:37:54"
+        },
+        {
+            "name": "dhii/expression-interface",
+            "version": "v0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/expression-interface.git",
+                "reference": "ac1fb00c039fb33ed9476a0f141072b8b3adb6c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/expression-interface/zipball/ac1fb00c039fb33ed9476a0f141072b8b3adb6c5",
+                "reference": "ac1fb00c039fb33ed9476a0f141072b8b3adb6c5",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/evaluable-interface": "^0.1",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Expression\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Interoperable interfaces for representing expressions.",
+            "time": "2017-01-23 14:04:21"
         }
     ],
     "packages-dev": [
@@ -1755,7 +1756,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "dhii/espresso-abstract": 20,
+        "dhii/expression-abstract": 20,
         "dhii/php-cs-fixer-config": 20
     },
     "prefer-stable": false,
