@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.1] - 2016-30-01
 
+Initial version.
+
 ### Added
 - Added concrete implementations.
 - Added tests.
