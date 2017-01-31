@@ -2,26 +2,17 @@
 
 namespace Dhii\Espresso\Test;
 
-use \Dhii\Espresso\AbstractGenericExpression;
-use \Dhii\Evaluable\EvaluableInterface;
-use \Xpmock\TestCase;
+use Dhii\Evaluable\EvaluableInterface;
+use Dhii\Expression\AbstractGenericExpression;
+use Xpmock\TestCase;
 
 /**
- * Tests {@see \Dhii\Espress\Expression\AbstractGenericExpression}.
+ * Tests {@see \Dhii\Espresso\AbstractGenericExpression}.
  *
  * @since [*next-version*]
  */
 class AbstractGenericExpressionTest extends TestCase
 {
-    /**
-     * The instance of the test subject.
-     *
-     * @since [*next-version*]
-     *
-     * @var AbstractGenericExpression
-     */
-    protected $instance;
-
     /**
      * Creates a new instance of the test subject for testing.
      *
@@ -37,8 +28,7 @@ class AbstractGenericExpressionTest extends TestCase
             ->evaluate(0) // return value does not matter
             ->new();
 
-        $ref        = $this->reflect($mock);
-        $ref->terms = $terms;
+        $mock->this()->terms = $terms;
 
         return $mock;
     }
@@ -54,17 +44,9 @@ class AbstractGenericExpressionTest extends TestCase
      */
     public function mockEvaluable($return = null)
     {
-        return $this->mock('Dhii\\Evaluable\\EvaluableInterface')->evaluate($return)->new();
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @since [*next-version*]
-     */
-    public function setUp()
-    {
-        $this->instance = $this->createInstance();
+        return $this->mock('Dhii\\Evaluable\\EvaluableInterface')
+            ->evaluate($return)
+            ->new();
     }
 
     /**
@@ -74,7 +56,10 @@ class AbstractGenericExpressionTest extends TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('Dhii\\Espresso\\AbstractExpression', $this->instance, 'Subject instance is not valid.');
+        $subject = $this->createInstance();
+
+        $this->assertInstanceOf('Dhii\\Espresso\\AbstractGenericExpression', $subject, 'Subject instance is not valid.');
+        $this->assertInstanceOf('Dhii\\Expression\\AbstractExpression', $subject, 'Subject instance is not valid.');
     }
 
     /**
@@ -84,10 +69,12 @@ class AbstractGenericExpressionTest extends TestCase
      */
     public function testAddTerm()
     {
-        $term = $this->mockEvaluable();
-        $this->instance->addTerm($term);
+        $subject = $this->createInstance();
 
-        $this->assertEquals(array($term), $this->reflect($this->instance)->terms);
+        $term = $this->mockEvaluable();
+        $subject->addTerm($term);
+
+        $this->assertEquals(array($term), $subject->this()->terms);
     }
 
     /**
@@ -97,18 +84,20 @@ class AbstractGenericExpressionTest extends TestCase
      */
     public function testRemoveTerm()
     {
+        $subject = $this->createInstance();
+
         $terms = array(
             $this->mockEvaluable(),
             $this->mockEvaluable(),
             $this->mockEvaluable(),
         );
 
-        $this->reflect($this->instance)->terms = $terms;
+        $subject->this()->terms = $terms;
 
-        $this->instance->removeTerm(1);
+        $subject->removeTerm(1);
         unset($terms[1]);
 
-        $this->assertEquals($terms, $this->reflect($this->instance)->terms);
+        $this->assertEquals($terms, $subject->this()->terms);
     }
 
     /**
@@ -118,15 +107,17 @@ class AbstractGenericExpressionTest extends TestCase
      */
     public function testSetTerms()
     {
+        $subject = $this->createInstance();
+
         $terms = array(
             $this->mockEvaluable(),
             $this->mockEvaluable(),
             $this->mockEvaluable(),
         );
 
-        $this->instance->setTerms($terms);
+        $subject->setTerms($terms);
 
-        $this->assertEquals($terms, $this->reflect($this->instance)->terms);
+        $this->assertEquals($terms, $subject->this()->terms);
     }
 
     /**
@@ -136,7 +127,9 @@ class AbstractGenericExpressionTest extends TestCase
      */
     public function testSetTermsWithExistingTerms()
     {
-        $this->reflect($this->instance)->terms = array($this->mockEvaluable());
+        $subject = $this->createInstance();
+
+        $subject->this()->terms = array($this->mockEvaluable());
 
         $terms = array(
             $this->mockEvaluable(),
@@ -144,8 +137,8 @@ class AbstractGenericExpressionTest extends TestCase
             $this->mockEvaluable(),
         );
 
-        $this->instance->setTerms($terms);
+        $subject->setTerms($terms);
 
-        $this->assertEquals($terms, $this->reflect($this->instance)->terms);
+        $this->assertEquals($terms, $subject->this()->terms);
     }
 }
