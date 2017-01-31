@@ -12,15 +12,6 @@ use Dhii\Expression\AbstractCompositeContext;
 class CompositeContext extends AbstractCompositeContext
 {
     /**
-     * The values.
-     *
-     * @since [*next-version*]
-     *
-     * @var array
-     */
-    protected $values;
-
-    /**
      * Constructor.
      *
      * @since [*next-version*]
@@ -29,7 +20,7 @@ class CompositeContext extends AbstractCompositeContext
      */
     public function __construct(array $values = array())
     {
-        $this->setValue($values);
+        $this->_setValue($values);
     }
 
     /**
@@ -39,7 +30,7 @@ class CompositeContext extends AbstractCompositeContext
      */
     public function getValue()
     {
-        return $this->values;
+        return $this->_getValue();
     }
 
     /**
@@ -47,9 +38,9 @@ class CompositeContext extends AbstractCompositeContext
      *
      * @since [*next-version*]
      */
-    public function _getValueOf($key)
+    public function getValueOf($key)
     {
-        return $this->values[$key];
+        return $this->_getValueOf($key);
     }
 
     /**
@@ -59,7 +50,7 @@ class CompositeContext extends AbstractCompositeContext
      */
     public function hasValue($key)
     {
-        return isset($this->values[$key]);
+        return $this->_hasValue($key);
     }
 
     /**
@@ -67,18 +58,30 @@ class CompositeContext extends AbstractCompositeContext
      *
      * @since [*next-version*]
      *
-     * @param string|array $key   The key of the value to set, or an array of values.
-     * @param mixed        $value [optional] The value to set. Default: null
+     * @param string $key   The key of the value to set.
+     * @param mixed  $value [optional] The value to set. Default: null
      *
      * @return $this This instance.
      */
     public function setValue($key, $value = null)
     {
-        if (is_null($value)) {
-            $this->values = $key;
-        } else {
-            $this->values[$key] = $value;
-        }
+        $this->_setValue($key, $value);
+
+        return $this;
+    }
+
+    /**
+     * Sets all of the context values, overwriting existing ones.
+     *
+     * @since [*next-version*]
+     *
+     * @param array $values An associative array of values.
+     *
+     * @return $this This instance.
+     */
+    public function setValues(array $values)
+    {
+        $this->_setValues($values);
 
         return $this;
     }
@@ -94,7 +97,21 @@ class CompositeContext extends AbstractCompositeContext
      */
     public function removeValue($key)
     {
-        unset($this->values[$key]);
+        $this->_removeValue($key);
+
+        return $this;
+    }
+
+    /**
+     * Removes all the values from the context.
+     *
+     * @since [*next-version*]
+     *
+     * @return $this This instance.
+     */
+    public function clearValues()
+    {
+        $this->_clearValues();
 
         return $this;
     }
