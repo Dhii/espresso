@@ -5,7 +5,7 @@ namespace Dhii\Espresso\Context;
 /**
  * A composite context implementation with array access support.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class ArrayContext extends CompositeContext implements \ArrayAccess
 {

@@ -9,14 +9,14 @@ use Dhii\Evaluable\EvaluableInterface;
  * An abstract and generic expression implementation that is a useful shortcut for exposing
  * all of the term management methods in {@see \Dhii\Espresso\AbstractExpression}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractGenericExpression extends AbstractExpression
 {
     /**
      * Adds a term to the expression.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param EvaluableInterface $term The term instance.
      *
@@ -30,7 +30,7 @@ abstract class AbstractGenericExpression extends AbstractExpression
     /**
      * Removes the term at a specific index from the expression.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int $index The zero-based index of the term to remove.
      *
@@ -44,7 +44,7 @@ abstract class AbstractGenericExpression extends AbstractExpression
     /**
      * Gets a term at a specific index from the expression.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int $index The zero-based index of the term to retrieve.
      *
@@ -58,7 +58,7 @@ abstract class AbstractGenericExpression extends AbstractExpression
     /**
      * Sets the expression terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array $terms An array of EvaluableInterface instances.
      *

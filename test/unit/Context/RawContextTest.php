@@ -9,21 +9,21 @@ use \Xpmock\TestCase;
 /**
  * Tests {@see Dhii\Espresso\Context\RawContext}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class RawContextTest extends TestCase
 {
     /**
      * The class name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'Dhii\\Espresso\\Context\\RawContext';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The context value
      *
@@ -40,7 +40,7 @@ class RawContextTest extends TestCase
     /**
      * Tests the constructor to ensure that the given value argument is correctly set.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testConstructor()
     {
@@ -52,7 +52,7 @@ class RawContextTest extends TestCase
     /**
      * Tests the value getter to ensure that the correct value is retrieved.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetValue()
     {
@@ -65,7 +65,7 @@ class RawContextTest extends TestCase
     /**
      * Tests the value setter to ensure that the value is correctly set.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSetValue()
     {

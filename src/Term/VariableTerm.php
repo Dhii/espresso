@@ -10,14 +10,14 @@ use \Dhii\Evaluable\EvaluableInterface;
 /**
  * A term whose value can vary depending on the context.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class VariableTerm implements EvaluableInterface
 {
     /**
      * The variable identifier.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var string
      */
@@ -26,7 +26,7 @@ class VariableTerm implements EvaluableInterface
     /**
      * Constructor.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $identifier The variable identifier.
      */
@@ -38,7 +38,7 @@ class VariableTerm implements EvaluableInterface
     /**
      * Gets the identifier.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return string The identifier.
      */
@@ -50,7 +50,7 @@ class VariableTerm implements EvaluableInterface
     /**
      * Sets the identifier.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $identifier The new identifier.
      *
@@ -66,7 +66,7 @@ class VariableTerm implements EvaluableInterface
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @throws EvaluationException If no context value
      */
@@ -86,7 +86,7 @@ class VariableTerm implements EvaluableInterface
     /**
      * Creates an evaluation exception.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array $args A variable number of arguments that represent the message and
      *                    interpolation values, similar to the `printf()` family of functions.

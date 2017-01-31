@@ -8,14 +8,14 @@ use Dhii\Evaluable\EvaluableInterface;
 /**
  * A term with a literal value.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class LiteralTerm implements EvaluableInterface
 {
     /**
      * The literal value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var mixed
      */
@@ -24,7 +24,7 @@ class LiteralTerm implements EvaluableInterface
     /**
      * Constructor.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The literal value.
      */
@@ -36,7 +36,7 @@ class LiteralTerm implements EvaluableInterface
     /**
      * Gets the literal value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return mixed The literal value.
      */
@@ -48,7 +48,7 @@ class LiteralTerm implements EvaluableInterface
     /**
      * Sets the literal value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The new literal value.
      *
@@ -64,7 +64,7 @@ class LiteralTerm implements EvaluableInterface
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function evaluate(ValueAwareInterface $ctx = null)
     {
