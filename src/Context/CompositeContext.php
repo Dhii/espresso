@@ -3,13 +3,14 @@
 namespace Dhii\Espresso\Context;
 
 use Dhii\Expression\AbstractCompositeContext;
+use Dhii\Expression\CompositeContextInterface;
 
 /**
  * A context that has multiple values.
  *
  * @since 0.1
  */
-class CompositeContext extends AbstractCompositeContext
+class CompositeContext extends AbstractCompositeContext implements CompositeContextInterface
 {
     /**
      * Constructor.

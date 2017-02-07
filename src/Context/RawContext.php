@@ -3,13 +3,14 @@
 namespace Dhii\Espresso\Context;
 
 use Dhii\Expression\AbstractContext;
+use Dhii\Expression\ContextInterface;
 
 /**
  * Description of RawContext.
  *
  * @since 0.1
  */
-class RawContext extends AbstractContext
+class RawContext extends AbstractContext implements ContextInterface
 {
     /**
      * The value.
