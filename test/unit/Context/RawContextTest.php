@@ -2,9 +2,9 @@
 
 namespace Dhii\Espresso\UnitTest\Context;
 
-use \Dhii\Espresso\Context\RawContext;
-use \Exception;
-use \Xpmock\TestCase;
+use Dhii\Espresso\Context\RawContext;
+use Exception;
+use Xpmock\TestCase;
 
 /**
  * Tests {@see Dhii\Espresso\Context\RawContext}.
@@ -56,7 +56,7 @@ class RawContextTest extends TestCase
      */
     public function testGetValue()
     {
-        $subject = $this->constructInstance(null);
+        $subject                = $this->constructInstance(null);
         $subject->this()->value = PHP_VERSION;
 
         $this->assertEquals(PHP_VERSION, $subject->getValue());

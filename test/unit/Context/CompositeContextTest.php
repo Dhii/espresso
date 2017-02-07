@@ -2,8 +2,8 @@
 
 namespace Dhii\Espresso\UnitTest\Context;
 
-use \Dhii\Espresso\Context\CompositeContext;
-use \Xpmock\TestCase;
+use Dhii\Espresso\Context\CompositeContext;
+use Xpmock\TestCase;
 
 /**
  * Tests {@see Dhii\Espresso\Context\CompositeContext}.
@@ -84,10 +84,10 @@ class CompositeContextTest extends TestCase
      */
     public function testGetValueOf()
     {
-        $values  = array(
+        $values = array(
             'me'   => 'Myself',
             'you'  => 'Yourself',
-            'misc' => 'This is a test'
+            'misc' => 'This is a test',
         );
         $subject = $this->constructInstance($values);
 
@@ -103,10 +103,10 @@ class CompositeContextTest extends TestCase
      */
     public function testHasValue()
     {
-        $values  = array(
+        $values = array(
             'me'   => 'Myself',
             'you'  => 'Yourself',
-            'misc' => 'This is a test'
+            'misc' => 'This is a test',
         );
         $subject = $this->constructInstance($values);
 
@@ -121,9 +121,9 @@ class CompositeContextTest extends TestCase
      */
     public function testSetValue()
     {
-        $values  = array(
-            'me'   => 'Myself',
-            'you'  => 'Yourself'
+        $values = array(
+            'me'  => 'Myself',
+            'you' => 'Yourself',
         );
         $subject = $this->constructInstance($values);
 
@@ -132,7 +132,7 @@ class CompositeContextTest extends TestCase
 
         $expected = array_merge($values, array(
             'him' => 'Himself',
-            'we'  => null
+            'we'  => null,
         ));
 
         $this->assertEquals($expected, $subject->this()->value);
@@ -147,18 +147,18 @@ class CompositeContextTest extends TestCase
     public function testSetValues()
     {
         $subject = $this->constructInstance(array(
-            'one'  => 1,
-            'two'  => 2
+            'one' => 1,
+            'two' => 2,
         ));
 
         $subject->setValues(array(
             'three' => 3,
-            'four'  => 4
+            'four'  => 4,
         ));
 
         $expected = array(
             'three' => 3,
-            'four'  => 4
+            'four'  => 4,
         );
 
         $this->assertEquals($expected, $subject->this()->value);
@@ -172,10 +172,10 @@ class CompositeContextTest extends TestCase
      */
     public function testRemoveValue()
     {
-        $values  = array(
+        $values = array(
             'me'   => 'Myself',
             'you'  => 'Yourself',
-            'misc' => 'This is a test'
+            'misc' => 'This is a test',
         );
         $subject = $this->constructInstance($values);
 
@@ -194,8 +194,8 @@ class CompositeContextTest extends TestCase
     public function testClearValues()
     {
         $subject = $this->constructInstance(array(
-            'one'  => 1,
-            'two'  => 2
+            'one' => 1,
+            'two' => 2,
         ));
 
         $subject->clearValues();
