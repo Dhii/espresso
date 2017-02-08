@@ -94,10 +94,9 @@ class AbstractGenericExpressionTest extends TestCase
 
         $subject->removeTerm(1);
 
-        unset($terms[1]);
-        $expected = $terms;
+        array_splice($terms, 1, 1, array());
 
-        $this->assertEquals($expected, $subject->this()->terms);
+        $this->assertEquals($terms, $subject->this()->terms);
     }
 
     /**
