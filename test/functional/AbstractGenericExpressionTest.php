@@ -86,18 +86,18 @@ class AbstractGenericExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
 
-        $terms = array(
+        $terms = $subject->this()->terms = array(
             $this->mockEvaluable(),
             $this->mockEvaluable(),
-            $this->mockEvaluable(),
+            $this->mockEvaluable()
         );
 
-        $subject->this()->terms = $terms;
-
         $subject->removeTerm(1);
-        unset($terms[1]);
 
-        $this->assertEquals($terms, $subject->this()->terms);
+        unset($terms[1]);
+        $expected = $terms;
+
+        $this->assertEquals($expected, $subject->this()->terms);
     }
 
     /**

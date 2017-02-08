@@ -38,7 +38,9 @@ abstract class AbstractGenericExpression extends AbstractExpression
      */
     public function removeTerm($index)
     {
-        return $this->_removeTerm($index);
+        $this->_removeTerm($index);
+
+        return $this;
     }
 
     /**
