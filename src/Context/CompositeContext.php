@@ -2,19 +2,20 @@
 
 namespace Dhii\Espresso\Context;
 
-use Dhii\Expression\AbstractCompositeContext;
+use Dhii\Expression\CompositeContextInterface;
+use Dhii\Expression\Context\AbstractCompositeContext;
 
 /**
  * A context that has multiple values.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
-class CompositeContext extends AbstractCompositeContext
+class CompositeContext extends AbstractCompositeContext implements CompositeContextInterface
 {
     /**
      * Constructor.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array $values The context values.
      */
@@ -26,7 +27,7 @@ class CompositeContext extends AbstractCompositeContext
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getValue()
     {
@@ -36,7 +37,7 @@ class CompositeContext extends AbstractCompositeContext
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getValueOf($key)
     {
@@ -46,7 +47,7 @@ class CompositeContext extends AbstractCompositeContext
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function hasValue($key)
     {
@@ -56,7 +57,7 @@ class CompositeContext extends AbstractCompositeContext
     /**
      * Sets the values or a single value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $key   The key of the value to set.
      * @param mixed  $value [optional] The value to set. Default: null
@@ -73,7 +74,7 @@ class CompositeContext extends AbstractCompositeContext
     /**
      * Sets all of the context values, overwriting existing ones.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array $values An associative array of values.
      *
@@ -89,7 +90,7 @@ class CompositeContext extends AbstractCompositeContext
     /**
      * Removes a value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $key The key of the value to remove.
      *
@@ -105,7 +106,7 @@ class CompositeContext extends AbstractCompositeContext
     /**
      * Removes all the values from the context.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return $this This instance.
      */

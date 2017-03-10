@@ -2,27 +2,27 @@
 
 namespace Dhii\Espresso\UnitTest\Context;
 
-use \Dhii\Espresso\Context\CompositeContext;
-use \Xpmock\TestCase;
+use Dhii\Espresso\Context\CompositeContext;
+use Xpmock\TestCase;
 
 /**
  * Tests {@see Dhii\Espresso\Context\CompositeContext}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class CompositeContextTest extends TestCase
 {
     /**
      * The class name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'Dhii\\Espresso\\Context\\CompositeContext';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array $values The context values. Default: array()
      *
@@ -40,7 +40,7 @@ class CompositeContextTest extends TestCase
      * Tests the constructor with no arguments to ensure that the context is initialized
      * without any values.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testConstructorNoArgs()
     {
@@ -53,7 +53,7 @@ class CompositeContextTest extends TestCase
      * Tests the constructor with an array argument to ensure that the values are correctly
      * internally set.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testConstructorWithArgs()
     {
@@ -66,7 +66,7 @@ class CompositeContextTest extends TestCase
     /**
      * Tests the value getter to ensure that all values are returned in an array.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetValue()
     {
@@ -80,14 +80,14 @@ class CompositeContextTest extends TestCase
      * Tests the single value getter to ensure that values for existing keys are returned
      * while non-existing key arguments result in a `null` return.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetValueOf()
     {
-        $values  = array(
+        $values = array(
             'me'   => 'Myself',
             'you'  => 'Yourself',
-            'misc' => 'This is a test'
+            'misc' => 'This is a test',
         );
         $subject = $this->constructInstance($values);
 
@@ -99,14 +99,14 @@ class CompositeContextTest extends TestCase
      * Tests the value checker method to ensure that it correctly determines if a value
      * exists in the context or not, by key.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testHasValue()
     {
-        $values  = array(
+        $values = array(
             'me'   => 'Myself',
             'you'  => 'Yourself',
-            'misc' => 'This is a test'
+            'misc' => 'This is a test',
         );
         $subject = $this->constructInstance($values);
 
@@ -117,13 +117,13 @@ class CompositeContextTest extends TestCase
     /**
      * Tests the single value setter method to ensure that the value is correctly internally set.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSetValue()
     {
-        $values  = array(
-            'me'   => 'Myself',
-            'you'  => 'Yourself'
+        $values = array(
+            'me'  => 'Myself',
+            'you' => 'Yourself',
         );
         $subject = $this->constructInstance($values);
 
@@ -132,7 +132,7 @@ class CompositeContextTest extends TestCase
 
         $expected = array_merge($values, array(
             'him' => 'Himself',
-            'we'  => null
+            'we'  => null,
         ));
 
         $this->assertEquals($expected, $subject->this()->value);
@@ -142,23 +142,23 @@ class CompositeContextTest extends TestCase
      * Tests the multiple value setter method to ensure that all values are correctly set and
      * all previous values are overwritten.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSetValues()
     {
         $subject = $this->constructInstance(array(
-            'one'  => 1,
-            'two'  => 2
+            'one' => 1,
+            'two' => 2,
         ));
 
         $subject->setValues(array(
             'three' => 3,
-            'four'  => 4
+            'four'  => 4,
         ));
 
         $expected = array(
             'three' => 3,
-            'four'  => 4
+            'four'  => 4,
         );
 
         $this->assertEquals($expected, $subject->this()->value);
@@ -168,14 +168,14 @@ class CompositeContextTest extends TestCase
      * Tests the value removal method to ensure that the value is correctly removed without
      * affecting the rest of the values.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testRemoveValue()
     {
-        $values  = array(
+        $values = array(
             'me'   => 'Myself',
             'you'  => 'Yourself',
-            'misc' => 'This is a test'
+            'misc' => 'This is a test',
         );
         $subject = $this->constructInstance($values);
 
@@ -189,13 +189,13 @@ class CompositeContextTest extends TestCase
     /**
      * Tests the method that removes all values to ensure that all values are removed.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testClearValues()
     {
         $subject = $this->constructInstance(array(
-            'one'  => 1,
-            'two'  => 2
+            'one' => 1,
+            'two' => 2,
         ));
 
         $subject->clearValues();

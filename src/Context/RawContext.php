@@ -2,19 +2,20 @@
 
 namespace Dhii\Espresso\Context;
 
-use Dhii\Expression\AbstractContext;
+use Dhii\Expression\Context\AbstractContext;
+use Dhii\Expression\ContextInterface;
 
 /**
- * Description of RawContext.
+ * A context that provides a specific, fixed raw value.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
-class RawContext extends AbstractContext
+class RawContext extends AbstractContext implements ContextInterface
 {
     /**
      * The value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var mixed
      */
@@ -23,7 +24,7 @@ class RawContext extends AbstractContext
     /**
      * Constructor.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The context value.
      */
@@ -35,7 +36,7 @@ class RawContext extends AbstractContext
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getValue()
     {
@@ -45,7 +46,7 @@ class RawContext extends AbstractContext
     /**
      * Sets the value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The new value.
      *
