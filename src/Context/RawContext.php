@@ -2,11 +2,11 @@
 
 namespace Dhii\Espresso\Context;
 
-use Dhii\Expression\AbstractContext;
+use Dhii\Expression\Context\AbstractContext;
 use Dhii\Expression\ContextInterface;
 
 /**
- * Description of RawContext.
+ * A context that provides a specific, fixed raw value.
  *
  * @since 0.1
  */
